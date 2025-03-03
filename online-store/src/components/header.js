@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
 import CartIcon from "./carticon";
+import "../styles/styles.css"
+// import "../styles/output.css"
 
 const Header = () => {
   return (
-    <header className="bg-gray-900 text-white p-4">
-      <nav className="flex justify-between items-center max-w-6xl mx-auto">
-        <h1 className="text-xl font-bold">
-          <Link to="/">Online Store</Link>
-        </h1>
-        <div className="flex space-x-4">
+    <header className="header">
+      <nav>
+        <div className="nav-links">
           <Link to="/" className="hover:text-gray-400">
             Home
           </Link>

@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+}
+
+header {
+    background-color: #455a64;
+    color: white;
+    padding: 50px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cart-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
