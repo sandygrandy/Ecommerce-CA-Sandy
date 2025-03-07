@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import { toast } from "react-toastify";
 
 const CartContext = createContext();
 
@@ -16,6 +17,15 @@ export const CartProvider = ({ children }) => {
             }
             return [...prevCart, { ...product, quantity: 1 }];
         });
+        toast.success("Product added to cart", {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
     }
 
     const removeFromCart = (productId) => {
@@ -25,9 +35,19 @@ export const CartProvider = ({ children }) => {
                     item.id === productId ? { ...item, quantity: item.quantity - 1 } : item
                 )
                 .filter((item) => item.quantity > 0)
-    )};
+        );
+        toast.success("Product removed from cart", {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined
+        });
+    };
 
-    const removeItem = (productId) => {
+    const clearProductFromCart = (productId) => {
         setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
     }
 
@@ -40,7 +60,7 @@ export const CartProvider = ({ children }) => {
     }, [cart]);    
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, removeItem, clearCart }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, clearProductFromCart }}>
             {children}
         </CartContext.Provider>
     );

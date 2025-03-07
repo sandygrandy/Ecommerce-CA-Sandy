@@ -9,9 +9,9 @@ const CheckoutPage = ({ clearCart }) => {
   };
 
   return (
-    <div>
-      <h2>Checkout</h2>
-      <button onClick={handleCheckout}>Complete Purchase</button>
+    <div className="center checkout">
+      <h2 className="title">Checkout</h2>
+      <button onClick={handleCheckout} className="button checkout-button">Complete Purchase</button>
     </div>
   );
 };

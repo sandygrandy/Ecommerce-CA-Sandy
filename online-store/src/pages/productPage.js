@@ -6,6 +6,7 @@ import Price from "../components/price";
 const ProductPage = ({addToCart}) => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const [cartLoading, setCartLoading] = useState(false);
 
   useEffect(() => {
     fetch(`https://v2.api.noroff.dev/online-shop/${id}`)
@@ -14,6 +15,14 @@ const ProductPage = ({addToCart}) => {
   }, [id]);
 
   if (!product) return <p className="center">Loading...</p>;
+
+  const cartButtonPressed = () => {
+    addToCart(product);
+    setCartLoading(true);
+    setTimeout(() => {
+      setCartLoading(false);
+    }, 1000);
+  }
 
   return (
     <div className="single-product-container">
@@ -28,7 +37,9 @@ const ProductPage = ({addToCart}) => {
         <h1 className="title">{product.title}</h1>
         <p>{product.description}</p>
         <Price product={product} />
-      <button onClick={() => addToCart(product)} className="button">Add to Cart</button>
+        <button onClick={cartButtonPressed} className="button" disabled={cartLoading}>
+          Add to cart
+        </button>
       </div>
     </div>
   );
