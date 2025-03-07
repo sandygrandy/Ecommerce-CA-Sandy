@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import ProductCard from "../components/productCard";
+import "../styles/styles.css"
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
@@ -16,15 +17,16 @@ const HomePage = () => {
   );
 
   return (
-    <div>
+    <div className="">
+      <h1 className="title center">Search products</h1>
       <input
         type="text"
-        placeholder="Search products..."
+        placeholder="Type product name here..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className="w-full p-2 border rounded-md shadow-md mb-4"
+        className="search-bar center"
       />
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="product-grid wrapper">
         {filteredProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

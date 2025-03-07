@@ -1,22 +1,24 @@
 import { Link } from "react-router-dom";
+import Price from "./price";
+import "../styles/styles.css"
 
 const ProductCard = ({ product }) => {
   return (
-    <div className="bg-white shadow-lg rounded-lg p-4">
+    <div className="product-card">
       <img
-        src={product.imageUrl}
+        src={product.image.url}
         alt={product.title}
-        className="w-full h-48 object-cover rounded-md"
+        className="card-image"
       />
-      <h3 className="text-lg font-semibold mt-2">{product.title}</h3>
-      <p className="text-gray-600">${product.discountedPrice}</p>
+      <h3 className="">{product.title}</h3>
+      <Price product={product} />
       <Link
         to={`/product/${product.id}`}
-        className="mt-2 block text-center bg-blue-600 text-white p-2 rounded-md hover:bg-blue-500"
+        className="button center"
       >
         View Product
       </Link>
-    </div>
+      </div>
   );
 };
 

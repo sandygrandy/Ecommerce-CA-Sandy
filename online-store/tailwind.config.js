@@ -4,5 +4,7 @@ module.exports = {
     "./public/index.html",
   ],
   theme: {},
-  plugins: [],
+  plugins: [
+    require('postcss-import')
+  ],
 };
