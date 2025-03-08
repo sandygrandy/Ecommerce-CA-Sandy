@@ -1,3 +1,4 @@
+/* eslint jsx-a11y/anchor-is-valid: 0 */
 const Footer = () => {
   return (
     <footer className="footer">
