@@ -25,7 +25,7 @@ const ProductPage = ({addToCart}) => {
   }
 
   return (
-    <div className="single-product-container">
+    <div className="single-product-container wrapper">
       <div className="product-image-container">
         <img
           className="product-img"
