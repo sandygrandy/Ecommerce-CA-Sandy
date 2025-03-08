@@ -10,17 +10,33 @@ import ContactPage from "./pages/contactPage";
 import { ToastContainer } from "react-toastify";
 
 const App = () => {
-
-  const { cart, addToCart, removeFromCart, clearCart, clearProductFromCart } = useCart();
+  const { cart, addToCart, removeFromCart, clearCart, clearProductFromCart } =
+    useCart();
 
   return (
     <Router>
       <Layout cart={cart}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/product/:id" element={<ProductPage addToCart={addToCart}/>} />
-          <Route path="/cart" element={<CartPage cart={cart} removeFromCart={removeFromCart} addToCart={addToCart} clearProductFromCart={clearProductFromCart} />} />
-          <Route path="/checkout" element={<CheckoutPage clearCart={clearCart} />} />
+          <Route
+            path="/product/:id"
+            element={<ProductPage addToCart={addToCart} />}
+          />
+          <Route
+            path="/cart"
+            element={
+              <CartPage
+                cart={cart}
+                removeFromCart={removeFromCart}
+                addToCart={addToCart}
+                clearProductFromCart={clearProductFromCart}
+              />
+            }
+          />
+          <Route
+            path="/checkout"
+            element={<CheckoutPage clearCart={clearCart} />}
+          />
           <Route path="/checkout-success" element={<CheckoutSuccessPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
@@ -28,6 +44,6 @@ const App = () => {
       </Layout>
     </Router>
   );
-}
+};
 
 export default App;

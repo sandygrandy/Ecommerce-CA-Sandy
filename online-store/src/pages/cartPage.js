@@ -11,7 +11,7 @@ const CartPage = ({
   const total = cart.reduce((sum, item) => sum + item.discountedPrice, 0);
 
   return (
-    <div className="wrapper">
+    <div className="wrapper fill-wrapper">
       <h2 className="title center">Your cart</h2>
       <div>
         {cart.length === 0 ? (
@@ -27,8 +27,8 @@ const CartPage = ({
                     alt={item.image.alt}
                   />
                   <div>
-                  <h3>{item.title}</h3>
-                  <p>Quantity: {item.quantity}</p>
+                    <h3>{item.title}</h3>
+                    <p>Quantity: {item.quantity}</p>
                     <button
                       className="change-quantity-button"
                       onClick={() => addToCart(item)}
@@ -41,13 +41,13 @@ const CartPage = ({
                     >
                       -
                     </button>
-                <Price product={item} />
-                  <button
-                    onClick={() => clearProductFromCart(item.id)}
-                    className="button"
-                  >
-                    Remove
-                  </button>
+                    <Price product={item} />
+                    <button
+                      onClick={() => clearProductFromCart(item.id)}
+                      className="button"
+                    >
+                      Remove
+                    </button>
                   </div>
                 </div>
               </div>

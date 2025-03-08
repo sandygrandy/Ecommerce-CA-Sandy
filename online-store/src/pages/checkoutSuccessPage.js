@@ -7,7 +7,9 @@ const CheckoutSuccessPage = () => {
       <p className="center">Thank you for shopping with us!</p>
       <p className="center">Your order has been placed successfully.</p>
       <p className="center">You will receive an email confirmation shortly.</p>
-      <Link to="/" className="button checkout-button">Return to Store</Link>
+      <Link to="/" className="button checkout-button">
+        Return to Store
+      </Link>
     </div>
   );
 };

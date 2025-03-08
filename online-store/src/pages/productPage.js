@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Price from "../components/price";
 
-
-const ProductPage = ({addToCart}) => {
+const ProductPage = ({ addToCart }) => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [cartLoading, setCartLoading] = useState(false);
@@ -22,7 +21,7 @@ const ProductPage = ({addToCart}) => {
     setTimeout(() => {
       setCartLoading(false);
     }, 1000);
-  }
+  };
 
   return (
     <div className="single-product-container wrapper">
@@ -37,7 +36,11 @@ const ProductPage = ({addToCart}) => {
         <h1 className="title">{product.title}</h1>
         <p>{product.description}</p>
         <Price product={product} />
-        <button onClick={cartButtonPressed} className="button" disabled={cartLoading}>
+        <button
+          onClick={cartButtonPressed}
+          className="button"
+          disabled={cartLoading}
+        >
           Add to cart
         </button>
       </div>

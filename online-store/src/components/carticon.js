@@ -4,8 +4,10 @@ import { useCart } from "./cart/cartContext";
 const CartIcon = () => {
   const { cart } = useCart();
 
-  const itemCount = cart.map(item => item.quantity).reduce((quantity,runningTotal) => quantity+runningTotal, 0);
-  
+  const itemCount = cart
+    .map((item) => item.quantity)
+    .reduce((quantity, runningTotal) => quantity + runningTotal, 0);
+
   return (
     <Link to="/cart" className="cart-icon">
       <svg
@@ -23,7 +25,9 @@ const CartIcon = () => {
           strokeLinejoin="round"
         />
       </svg>
-      {cart && cart.length > 0 && <div className="cart-counter">{itemCount}</div>}
+      {cart && cart.length > 0 && (
+        <div className="cart-counter">{itemCount}</div>
+      )}
     </Link>
   );
 };

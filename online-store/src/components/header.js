@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import CartIcon from "./carticon";
-import "../styles/styles.css"
+import "../styles/styles.css";
 
 const Header = () => {
   return (
@@ -8,15 +8,15 @@ const Header = () => {
       <nav>
         <div className="nav wrapper">
           <div className="nav-link-container">
-          <Link to="/" className="nav-links">
-            Home
-          </Link>
-          <Link to="/contact" className="nav-links">
-            Contact
-          </Link>
+            <Link to="/" className="nav-links">
+              Home
+            </Link>
+            <Link to="/contact" className="nav-links">
+              Contact
+            </Link>
           </div>
           <div className="cart-icon-container">
-          <CartIcon />
+            <CartIcon />
           </div>
         </div>
       </nav>
