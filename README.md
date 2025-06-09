@@ -43,7 +43,7 @@
    http://localhost:5173/
 
 
-### 🧠 Learnings
+## 🧠 Learnings
 This project helped reinforce concepts such as:
 
 Building reusable components in React
