@@ -8,7 +8,7 @@ const Price = ({ product }) => {
     : 0;
 
   return (
-    <p>
+    <p className="py-2">
       {hasDiscount && (
         <span
           style={{

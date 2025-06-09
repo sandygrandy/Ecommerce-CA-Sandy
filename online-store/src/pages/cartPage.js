@@ -12,7 +12,7 @@ const CartPage = ({
 
   return (
     <div className="wrapper fill-wrapper">
-      <h2 className="title center">Your cart</h2>
+      <h2 className="title center mt-10 mb-8">Your cart</h2>
       <div>
         {cart.length === 0 ? (
           <p className="center">Your cart is empty</p>
@@ -27,8 +27,10 @@ const CartPage = ({
                     alt={item.image.alt}
                   />
                   <div>
-                    <h3>{item.title}</h3>
-                    <p>Quantity: {item.quantity}</p>
+                    <h3 className="text-2xl font-bold text-gray-800 mb-3">{item.title}</h3>
+                    <Price product={item} />
+                    <p className="my-3">Quantity: {item.quantity}</p>
+                    <div className="my-5">
                     <button
                       className="change-quantity-button"
                       onClick={() => addToCart(item)}
@@ -41,10 +43,10 @@ const CartPage = ({
                     >
                       -
                     </button>
-                    <Price product={item} />
+                    </div>
                     <button
                       onClick={() => clearProductFromCart(item.id)}
-                      className="button"
+                      className="button mt-3"
                     >
                       Remove
                     </button>
@@ -54,10 +56,10 @@ const CartPage = ({
             </div>
           ))
         )}
-        <p className="center">Free shipping!</p>
-        <h3 className="cart-total">Total: ${total}</h3>
+        <p className="center my-8">Free shipping!</p>
+        <h3 className="cart-total my-8">Total: ${total}</h3>
       </div>
-      <div className="center">
+      <div className="center my-8">
         <Link to="/checkout" className="button">
           Proceed to Checkout
         </Link>

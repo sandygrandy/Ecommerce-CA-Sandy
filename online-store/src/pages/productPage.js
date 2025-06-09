@@ -33,12 +33,12 @@ const ProductPage = ({ addToCart }) => {
         />
       </div>
       <div>
-        <h1 className="title">{product.title}</h1>
-        <p>{product.description}</p>
+        <h1 className="title my-3">{product.title}</h1>
+        <p className="my-3">{product.description}</p>
         <Price product={product} />
         <button
           onClick={cartButtonPressed}
-          className="button"
+          className="button mt-5"
           disabled={cartLoading}
         >
           Add to cart

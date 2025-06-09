@@ -66,6 +66,8 @@ p {
 
 .button:hover {
   background-color: #455a64;
+  color:#f7f7f7;
+  transition: ease-in-out 0.3s;
 }
 
 /* Layout helpers */
@@ -144,7 +146,7 @@ header {
   background-color: #f7f7f7;
   padding: 10px;
   border: 1px solid #455a64;
-  border-radius: 10px;
+  border-radius: 20px;
 
   box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
 }
@@ -256,7 +258,7 @@ header {
   background-color: #f7f7f7;
   color: #263238;
   border: 2px solid #455a64;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 5px 10px;
   cursor: pointer;
 }

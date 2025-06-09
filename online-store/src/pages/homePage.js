@@ -17,8 +17,8 @@ const HomePage = () => {
   );
 
   return (
-    <div className="">
-      <h1 className="title center">Search products</h1>
+    <div className="mt-10">
+      <h1 className="title center mb-7">Search products</h1>
       <input
         type="text"
         placeholder="Type product name here..."
