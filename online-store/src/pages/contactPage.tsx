@@ -4,10 +4,6 @@ function contactPage() {
     const email = formData.get("email");
     const subject = formData.get("subject");
     const message = formData.get("message");
-    console.log(`Name: ${name}`);
-    console.log(`Email: ${email}`);
-    console.log(`Subject: ${subject}`);
-    console.log(`Message: ${message}`);
   };
 
   return (

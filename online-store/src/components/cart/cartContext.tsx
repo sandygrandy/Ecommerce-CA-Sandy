@@ -4,7 +4,8 @@ import { toast } from "react-toastify";
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const initialCartValue = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartFromStorage = localStorage.getItem("cart");
+  const initialCartValue = cartFromStorage ? JSON.parse(cartFromStorage) : [];
   const [cart, setCart] = useState(initialCartValue);
 
   const addToCart = (product) => {
